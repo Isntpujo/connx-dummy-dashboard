@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "label": "Silver Ticket",
+    "value": 5000000
+  },
+  {
+    "id": 2,
+    "label": "Blue Ticket",
+    "value": 2340000
+  },
+  {
+    "id": 1,
+    "label": "Gold Ticket",
+    "value": 1200500
+  },
+  {
+    "id": 1,
+    "label": "VIP Ticket",
+    "value": 7320000
+  }
+]

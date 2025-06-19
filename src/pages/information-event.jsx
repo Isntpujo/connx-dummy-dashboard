@@ -1,0 +1,184 @@
+import Button from "../components/elements/button";
+import CardAddImgEvent from "../components/elements/card-add-img-event";
+import InputForm from "../components/elements/input";
+import Input from "../components/elements/input/input";
+import Navbar from "../components/elements/navbar";
+import { useLocation, useParams } from "react-router-dom";
+import TextArea from "../components/elements/textarea";
+import DropdownSelect from "../components/elements/select";
+import { useState } from "react";
+import SidebarEventMenu from "../components/elements/sidebar-event-menu";
+
+const products = [
+  {
+    id: 1,
+    image: "/images/img-card-event-karaoke.jpg",
+    nameTicket: "OTW Festival",
+    sold: 2.564,
+    views: 12.345,
+  },
+];
+
+const InformationEventPage = () => {
+  const location = useLocation();
+  console.log(location);
+
+  const { nameTicket, image } = useParams();
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  return (
+    <div className="flex justify-center items-start rel h-dvh w-full bg-zinc-900 overflow-scroll no-scrollbar">
+      <SidebarEventMenu isOpen={isSidebarOpen} />
+      <div className="flex flex-col w-full h-full items-center">
+        <Navbar onToggleSidebar={toggleSidebar} />
+        <div className="bg-[#F5F5F9] flex flex-col p-8 gap-5 w-full h-max">
+          <div className="bg-white rounded-xl p-5 flex flex-row items-center justify-between">
+            <div className="flex flex-row gap-3 items-center justify-center shrink-0 relative">
+              <svg
+                className="rounded-[70px] shrink-0 w-12 h-12 relative overflow-visible"
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="48" height="48" rx="24" fill="#EDF5FE" />
+                <path
+                  d="M34 22.7409V22.172C34 21.4259 33.5636 20.7358 32.8818 20.456C29.5636 19.0756 26.6909 16.7907 25.1727 15.4477C24.5 14.8508 23.5 14.8508 22.8273 15.4477C21.3 16.7907 18.4364 19.0663 15.1182 20.456C14.7857 20.5942 14.5014 20.8317 14.302 21.1377C14.1027 21.4436 13.9975 21.804 14 22.172V22.7409C14 24.1306 14.8455 25.3057 16.0364 25.7813C16.0091 27.3482 15.891 29.0922 15.5637 30.715C15.3273 31.8902 16.1637 33 17.3364 33H30.6727C31.8455 33 32.6818 31.8902 32.4455 30.715C32.1182 29.0829 31.9909 27.3389 31.9727 25.7813C33.1545 25.3057 34 24.1306 34 22.7409ZM24 16.8746C25.2091 17.9378 27.1727 19.5233 29.5546 20.8756H18.4455C20.8273 19.5233 22.7909 17.9378 24 16.8746ZM24.9091 22.7409H27.6364C27.6364 23.515 27.0273 24.1399 26.2727 24.1399C25.5182 24.1399 24.9091 23.515 24.9091 22.7409ZM21.7273 24.1399C20.9728 24.1399 20.3637 23.515 20.3637 22.7409H23.0909C23.0909 23.515 22.4818 24.1399 21.7273 24.1399ZM18.5455 22.7409C18.5455 23.515 17.9364 24.1399 17.1819 24.1399C16.4273 24.1399 15.8182 23.515 15.8182 22.7409H18.5455ZM17.3273 31.1347C17.6819 29.4 17.8182 27.572 17.8455 25.9306C18.4637 25.7907 19.0182 25.4736 19.4455 25.0166C19.6728 25.2497 19.9364 25.4363 20.2182 25.5948C20.1273 27.3389 19.9819 29.3254 19.7455 31.1254H17.3273V31.1347ZM21.5909 31.1347C21.8091 29.428 21.9455 27.6093 22.0273 25.9772C22.7909 25.9026 23.4909 25.5575 24 25.0259C24.5091 25.5575 25.2 25.9026 25.9727 25.9772C26.0637 27.6093 26.1909 29.428 26.4091 31.1347H21.5909ZM28.2455 31.1347C28 29.3254 27.8546 27.3389 27.7727 25.6041C28.0546 25.4456 28.3273 25.2591 28.5455 25.0259C28.9727 25.4736 29.5273 25.8 30.1455 25.9399C30.1727 27.5813 30.3091 29.4093 30.6636 31.144H28.2455V31.1347ZM30.8182 24.1399C30.0636 24.1399 29.4546 23.515 29.4546 22.7409H32.1818C32.1818 23.515 31.5727 24.1399 30.8182 24.1399Z"
+                  fill="#2953F6"
+                />
+              </svg>
+              <div className="flex flex-col gap-0.5 items-start justify-start">
+                <div className="text-black text-xs bg-gray-200 py-0.5 px-3 rounded-full">
+                  Draft
+                </div>
+                <div className="text-black font-bold ">{nameTicket}</div>
+              </div>
+            </div>
+            <Button color="success" size="sm">
+              <svg
+                className="shrink-0 w-3.5 h-3.5 relative overflow-visible"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.57272 7.08756L2.21647 6.50422C2.02203 6.42644 1.90789 6.28547 1.87405 6.08131C1.83983 5.87714 1.89564 5.70214 2.04147 5.55631L3.87897 3.71881C4.01508 3.58269 4.1755 3.48547 4.36022 3.42714C4.54494 3.36881 4.73453 3.35908 4.92897 3.39797L5.6873 3.55839C5.17203 4.17089 4.76136 4.72758 4.4553 5.22847C4.14886 5.72897 3.85467 6.34867 3.57272 7.08756ZM12.1477 1.40006C12.2255 1.40006 12.3033 1.4195 12.3811 1.45839C12.4588 1.49728 12.5269 1.54589 12.5852 1.60422C12.6436 1.66256 12.6922 1.73061 12.7311 1.80839C12.7699 1.88617 12.7894 1.96394 12.7894 2.04172C12.8283 2.94589 12.6364 3.88408 12.2136 4.85631C11.7905 5.82853 11.1949 6.69867 10.4269 7.46672C9.90189 7.99172 9.39633 8.41211 8.91022 8.72789C8.42411 9.04406 7.8505 9.34311 7.18939 9.62506C7.063 9.67367 6.93428 9.69797 6.80322 9.69797C6.67178 9.69797 6.55744 9.64936 6.46022 9.55214L4.6373 7.72922C4.54008 7.632 4.49147 7.51767 4.49147 7.38622C4.49147 7.25517 4.51578 7.12644 4.56439 7.00006C4.84633 6.34867 5.14539 5.77739 5.46155 5.28622C5.77733 4.79544 6.19772 4.28756 6.72272 3.76256C7.49078 2.9945 8.36092 2.39892 9.33314 1.97581C10.3054 1.55308 11.2436 1.36117 12.1477 1.40006ZM8.44355 5.74589C8.66717 5.9695 8.94192 6.08131 9.2678 6.08131C9.5933 6.08131 9.86786 5.9695 10.0915 5.74589C10.3151 5.52228 10.4269 5.24753 10.4269 4.92164C10.4269 4.59614 10.3151 4.32158 10.0915 4.09797C9.86786 3.87436 9.5933 3.76256 9.2678 3.76256C8.94192 3.76256 8.66717 3.87436 8.44355 4.09797C8.21994 4.32158 8.10814 4.59614 8.10814 4.92164C8.10814 5.24753 8.21994 5.52228 8.44355 5.74589ZM7.10189 10.6167C7.84078 10.3348 8.463 10.0408 8.96855 9.73472C9.47411 9.42828 10.0331 9.01742 10.6456 8.50214L10.7915 9.26047C10.8304 9.45492 10.8206 9.64703 10.7623 9.83681C10.704 10.0262 10.6067 10.1889 10.4706 10.3251L8.63314 12.1626C8.4873 12.3084 8.3123 12.3619 8.10814 12.323C7.90397 12.2841 7.763 12.1674 7.68522 11.973L7.10189 10.6167ZM2.3623 9.36255C2.70258 9.02228 3.11578 8.84961 3.60189 8.84456C4.088 8.83989 4.50119 9.00769 4.84147 9.34797C5.18175 9.68825 5.35189 10.1014 5.35189 10.5876C5.35189 11.0737 5.18175 11.4869 4.84147 11.8271C4.59842 12.0702 4.19261 12.2792 3.62405 12.4542C3.05511 12.6292 2.26994 12.7848 1.26855 12.9209C1.40467 11.9195 1.56022 11.1369 1.73522 10.573C1.91022 10.0091 2.11925 9.60561 2.3623 9.36255Z"
+                  fill="white"
+                />
+              </svg>
+              Tayangkan Event
+            </Button>
+          </div>
+          <div className="flex gap-5">
+            <div className="flex flex-col gap-5 *:w-[330px] relative">
+              {products.map((product) => (
+                <CardAddImgEvent key={product.id}>
+                  <CardAddImgEvent.Image image={product.image} />
+                  <CardAddImgEvent.AddImg image={product.image} />
+                  <CardAddImgEvent.Footer />
+                </CardAddImgEvent>
+              ))}
+            </div>
+            <div className="flex flex-col gap-5 p-5 bg-white rounded-2xl w-full h-fit">
+              <Input type="text" placeholder="Event Name" name="Event Name" />
+              <TextArea
+                placeholder="Event Description"
+                name="Event Description"
+              />
+              <div className="flex flex-col gap-2">
+                <InputForm
+                  type="text"
+                  placeholder="Masukan Penyelenggara Event"
+                  name="Penyelenggara Event"
+                  label="Penyelenggara Event"
+                />
+                <div className="flex items-center gap-1">
+                  <svg
+                    className="shrink-0 w-2.5 h-2.5 relative overflow-visible"
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.00033 9.16669C7.30033 9.16669 9.16699 7.30002 9.16699 5.00002C9.16699 2.70002 7.30033 0.833354 5.00033 0.833354C2.70033 0.833353 0.83366 2.70002 0.83366 5.00002C0.833659 7.30002 2.70033 9.16669 5.00033 9.16669ZM5.00033 4.58335C5.22949 4.58335 5.41699 4.77085 5.41699 5.00002L5.41699 6.66669C5.41699 6.89585 5.22949 7.08335 5.00033 7.08335C4.77116 7.08335 4.58366 6.89585 4.58366 6.66669L4.58366 5.00002C4.58366 4.77085 4.77116 4.58335 5.00033 4.58335ZM4.58366 2.91669L5.41699 2.91669L5.41699 3.75002L4.58366 3.75002L4.58366 2.91669Z"
+                      fill="#878787"
+                    />
+                  </svg>
+                  <div className="text-gray-400 text-[9px] font-semibold">
+                    Siapa yang akan menyelenggarakan event ini.
+                  </div>
+                </div>
+              </div>
+              <DropdownSelect />
+              <div className="flex flex-col gap-2">
+                <Input
+                  type="email"
+                  placeholder="example@gmail.com"
+                  name="Email"
+                />
+                <div className="flex items-center gap-1">
+                  <svg
+                    className="shrink-0 w-2.5 h-2.5 relative overflow-visible"
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.00033 9.16669C7.30033 9.16669 9.16699 7.30002 9.16699 5.00002C9.16699 2.70002 7.30033 0.833354 5.00033 0.833354C2.70033 0.833353 0.83366 2.70002 0.83366 5.00002C0.833659 7.30002 2.70033 9.16669 5.00033 9.16669ZM5.00033 4.58335C5.22949 4.58335 5.41699 4.77085 5.41699 5.00002L5.41699 6.66669C5.41699 6.89585 5.22949 7.08335 5.00033 7.08335C4.77116 7.08335 4.58366 6.89585 4.58366 6.66669L4.58366 5.00002C4.58366 4.77085 4.77116 4.58335 5.00033 4.58335ZM4.58366 2.91669L5.41699 2.91669L5.41699 3.75002L4.58366 3.75002L4.58366 2.91669Z"
+                      fill="#878787"
+                    />
+                  </svg>
+                  <div className="text-gray-400 text-[9px] font-semibold">
+                    Email Contact Person untuk dihubungi oleh orang-orang yang
+                    tertarik dengan event ini
+                  </div>
+                </div>
+              </div>
+              <InputForm
+                type="text"
+                placeholder="Location"
+                name="Location"
+                label="Location Name"
+              />
+              <InputForm
+                type="text"
+                placeholder="Address"
+                name="Location"
+                label="Address Name"
+              />
+              <InputForm
+                type="text"
+                placeholder="Link Embed Maps"
+                name="Link Embed Maps"
+                label="Link Embed Maps"
+              />
+              <div className="flex flex-col gap-2">
+                <label htmlFor="Aturan & Kebijakan Event" className="text-sm">
+                  Aturan & Kebijakan Event
+                </label>
+                <TextArea
+                  placeholder="Aturan & Kebijakan Event"
+                  name="Aturan & Kebijakan Event"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default InformationEventPage;

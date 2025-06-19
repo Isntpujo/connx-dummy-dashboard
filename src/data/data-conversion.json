@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "label": "View",
+    "value": 20
+  },
+  {
+    "id": 2,
+    "label": "Order",
+    "value": 30
+  },
+  {
+    "id": 1,
+    "label": "Purchase",
+    "value": 50
+  }
+]

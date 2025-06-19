@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "gender": "Man",
+    "data": [
+      {
+        "name": "Joe",
+        "day": "1",
+        "date": "2021-01-01",
+        "time": "10:00",
+        "ticket": "Silver Ticket"
+      },
+      {
+        "name": "Anwar",
+        "day": "1",
+        "date": "2021-01-01",
+        "time": "10:00",
+        "ticket": "Silver Ticket"
+      },
+      {
+        "name": "Gilfa",
+        "day": "1",
+        "date": "2021-01-01",
+        "time": "10:00",
+        "ticket": "Silver Ticket"
+      },
+      {
+        "name": "Agud",
+        "day": "1",
+        "date": "2021-01-01",
+        "time": "10:00",
+        "ticket": "Silver Ticket"
+      },
+      {
+        "name": "Rizal",
+        "day": "1",
+        "date": "2021-01-01",
+        "time": "10:00",
+        "ticket": "Silver Ticket"
+      },
+      {
+        "name": "Alis",
+        "day": "1",
+        "date": "2021-01-01",
+        "time": "10:00",
+        "ticket": "Silver Ticket"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "gender": "Women",
+    "data": [
+      {
+        "name": "Cecil",
+        "day": "1",
+        "date": "2021-01-01",
+        "time": "10:00",
+        "ticket": "Silver Ticket"
+      },
+      {
+        "name": "Ulun",
+        "day": "1",
+        "date": "2021-01-01",
+        "time": "10:00",
+        "ticket": "Silver Ticket"
+      },
+      {
+        "name": "Novi",
+        "day": "1",
+        "date": "2021-01-01",
+        "time": "10:00",
+        "ticket": "Silver Ticket"
+      }
+    ]
+  }
+]
