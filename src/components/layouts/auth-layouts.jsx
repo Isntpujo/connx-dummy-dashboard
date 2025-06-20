@@ -105,6 +105,11 @@ const AuthLayout = (props) => {
               </defs>
             </svg>
             <div className="text-sm text-black">Hallo! Selamat datang di Connx Event Management dimana kamu bisa memonitoring seluruh penyelenggaraan event & manajemen tiket, hingga laporan analisa event di akhir acara.</div>
+            <div className="flex gap-2 px-4 py-3 bg-gray-100 rounded-xl text-xs">
+              <div className="text-gray-400">Testing →</div>
+              <div className="text-gray-400">User : johnd</div>
+              <div className="text-gray-400">Pass : m38rmF$</div>
+            </div>
           </div>
           {children}
           <Navigation type={type} />
