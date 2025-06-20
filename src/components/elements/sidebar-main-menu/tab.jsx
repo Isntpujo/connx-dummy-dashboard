@@ -13,7 +13,7 @@ const TabMenu = ({ isOpen }) => {
       ),
       id: 1,
       name: 'Dashboard',
-      href: '/dashboard',
+      href: '/',
     },
     {
       icon: (

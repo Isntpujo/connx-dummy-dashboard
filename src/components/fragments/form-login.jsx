@@ -68,7 +68,7 @@ const FormLogin = () => {
       if (status) {
         localStorage.setItem('token', res); // Kalo login berhasil kita simpen token nya ke localStorage
         localStorage.setItem('username', form.username); // Kalo login berhasil kita simpen username ke localStorage
-        window.location.href = '/dashboard'; // Login berhasil kira redirect ke dashboard page
+        window.location.href = '/'; // Login berhasil kira redirect ke dashboard page
       } else {
         SetLoginFailed(res.response.data); // Kalo login gagal kita tampilkan error message dari server
         console.log(res.response.data); // Cek isi pesan dari server

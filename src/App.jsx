@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UserConnectionStatus from './components/elements/user-connection-status/user-connection-status';
-import ProtectedLayout from './components/ProtectedRoute.jsx';
+// import ProtectedLayout from './components/ProtectedRoute.jsx';
 import DashboardPage from './pages/dashboard.jsx';
 import LoginPage from './pages/login.jsx';
 import RegisterPage from './pages/register.jsx';
@@ -24,24 +24,23 @@ function App() {
       <UserConnectionStatus />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route element={<ProtectedLayout />}>
-            <Route path="/dashboard" element={<DashboardPage />} />
-            <Route path="/analytics" element={<AnalyticsPage />} />
-            <Route path="/manage-event" element={<ManageEventPage />} />
-            <Route path="/products" element={<ProductPage />} />
-            <Route path="/voucher-code" element={<VoucherCodePage />} />
-            <Route path="/log-activities" element={<LogActivitiesPage />} />
-            <Route path="/information-event/:nameTicket" element={<InformationEventPage />} />
-            <Route path="/information-ticket/:nameTicket" element={<InformationTicketPage />} />
-            <Route path="/formulir-pemesanan/:nameTicket" element={<FormulirPemesananPage />} />
-            <Route path="/analytics-event/:nameTicket" element={<AnalyticsEventPage />} />
-            <Route path="/sales-report/:nameTicket" element={<SalesReportPage />} />
-            <Route path="/guest-and-checkin/:nameTicket" element={<GuestAndCheckinPage />} />
-            <Route path="/e-ticket/:nameTicket" element={<ETicketPage />} />
-            <Route path="/email-blast/:nameTicket" element={<EmailBlastPage />} />
-          </Route>
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/analytics" element={<AnalyticsPage />} />
+          <Route path="/manage-event" element={<ManageEventPage />} />
+          <Route path="/products" element={<ProductPage />} />
+          <Route path="/voucher-code" element={<VoucherCodePage />} />
+          <Route path="/log-activities" element={<LogActivitiesPage />} />
+          <Route path="/information-event/:nameTicket" element={<InformationEventPage />} />
+          <Route path="/information-ticket/:nameTicket" element={<InformationTicketPage />} />
+          <Route path="/formulir-pemesanan/:nameTicket" element={<FormulirPemesananPage />} />
+          <Route path="/analytics-event/:nameTicket" element={<AnalyticsEventPage />} />
+          <Route path="/sales-report/:nameTicket" element={<SalesReportPage />} />
+          <Route path="/guest-and-checkin/:nameTicket" element={<GuestAndCheckinPage />} />
+          <Route path="/e-ticket/:nameTicket" element={<ETicketPage />} />
+          <Route path="/email-blast/:nameTicket" element={<EmailBlastPage />} />
+          {/* <Route element={<ProtectedLayout />}></Route> */}
         </Routes>
       </BrowserRouter>
     </>
